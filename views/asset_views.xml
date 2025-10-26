@@ -1,0 +1,67 @@
+<odoo>
+    <record id="view_asset_form" model="ir.ui.view">
+        <field name="name">asset.master.form</field>
+        <field name="model">asset.master</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="hostname"/>
+                            <field name="brand"/>
+                            <field name="type"/>
+                            <field name="serial_number"/>
+                            <field name="mac_address"/>
+                            <field name="os"/>
+                            <field name="processor"/>
+                            <field name="hdd"/>
+                            <field name="ram"/>
+                        </group>
+                        <group>
+                            <field name="location"/>
+                            <field name="current_user"/>
+                            <field name="subsidiary"/>
+                            <field name="position"/>
+                            <field name="status"/>
+                            <field name="vendor_name"/>
+                            <field name="purchase_date"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="History">
+                            <field name="history_ids">
+                                <tree editable="bottom">
+                                    <field name="from_location"/>
+                                    <field name="to_location"/>
+                                    <field name="moved_by"/>
+                                    <field name="date"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="QR Code">
+                            <field name="qr_code" widget="image"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_asset_tree" model="ir.ui.view">
+        <field name="name">asset.master.tree</field>
+        <field name="model">asset.master</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="hostname"/>
+                <field name="brand"/>
+                <field name="type"/>
+                <field name="status"/>
+                <field name="location"/>
+                <field name="current_user"/>
+                <field name="purchase_date"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="menu_asset_root" name="Asset Management" sequence="10"/>
+    <menuitem id="menu_asset_master" name="Assets" parent="menu_asset_root" action="action_asset_master"/>
+</odoo>
